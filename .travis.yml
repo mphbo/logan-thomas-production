@@ -6,7 +6,7 @@ before_install:
   - docker build -t mphbo/logan-thomas-production -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true mphbo/logan-thomas-production npm run lint -- --coverage
+  - docker run -e CI=true mphbo/logan-thomas-production npm run lint
 
 deploy:
   provider: elasticbeanstalk
