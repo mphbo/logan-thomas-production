@@ -1,30 +1,33 @@
-# Install dependencies only when needed
-FROM node:lts-alpine AS deps
+# dependencies image
+FROM node:14-alpine
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-WORKDIR /opt/app
-COPY package.json ./
-RUN npm install
-
-# Rebuild the source code only when needed
-# This is where because may be the case that you would try
-# to build the app based on some `X_TAG` in my case (Git commit hash)
-# but the code hasn't changed.
-FROM node:lts-alpine AS builder
-
-ENV NODE_ENV=production
-WORKDIR /opt/app
+# build image
+FROM node:14-alpine
+WORKDIR /app
+COPY --from=0 /app/node_modules ./node_modules
 COPY . .
-COPY --from=deps /opt/app/node_modules ./node_modules
-RUN npm run build
+RUN yarn build
+RUN rm -rf node_modules
+RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
 
-# Production image, copy all the files and run next
-FROM node:lts-alpine AS runner
+# build output image
+FROM node:14-alpine
 
-ARG X_TAG
-WORKDIR /opt/app
-ENV NODE_ENV=production
-COPY --from=builder /opt/app/next.config.js ./
-COPY --from=builder /opt/app/public ./public
-COPY --from=builder /opt/app/.next ./.next
-COPY --from=builder /opt/app/node_modules ./node_modules
-CMD ["node_modules/.bin/next", "start"]
+ENV NODE_ENV production
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+WORKDIR /app
+COPY --from=1 --chown=nextjs:nodejs /app/package.json /app/yarn.lock ./
+COPY --from=1 --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=1 --chown=nextjs:nodejs /app/public ./public
+COPY --from=1 --chown=nextjs:nodejs /app/.next ./.next
+
+USER nextjs
+
+EXPOSE 3000
+
+CMD [ "yarn", "start" ]
