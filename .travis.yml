@@ -7,7 +7,6 @@ services:
 
   script:
     - docker run -e CI=true mphbo/logan-thomas-production npm run test -- --coverage
-
   deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
