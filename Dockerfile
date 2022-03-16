@@ -2,16 +2,16 @@
 FROM node:14-alpine
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN npm install
 
 # build image
 FROM node:14-alpine
 WORKDIR /app
 COPY --from=0 /app/node_modules ./node_modules
 COPY . .
-RUN yarn build
+RUN npm run build
 RUN rm -rf node_modules
-RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
+RUN npm install
 
 # build output image
 FROM node:14-alpine
@@ -30,4 +30,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD [ "npm", "start" ]
