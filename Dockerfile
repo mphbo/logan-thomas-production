@@ -1,11 +1,12 @@
 FROM node:16-alpine as builder
+RUN mkdir -p /app
 WORKDIR /app
-COPY package.json .
+COPY package.json .app
 RUN npm install
-COPY . .
+COPY . ./app
 RUN npm run build
 
 # FROM nginx
-EXPOSE 80
+EXPOSE 3000 
 # COPY --from=builder /app/.next /usr/share/nginx/html
 CMD npm run start
