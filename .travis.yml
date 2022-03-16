@@ -11,7 +11,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "logan-thomas-production"
+  app: "logan thomas production"
   env: "Loganthomasproduction-env"
   bucket_name: "elasticbeanstalk-us-east-1-080740215952"
   bucket_path: "logan-thomas-production"
