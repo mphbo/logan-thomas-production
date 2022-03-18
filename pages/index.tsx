@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
           <a href="http://loganthomas.ca" className={styles.card}>
             <h2>About &rarr;</h2>
-            <p>Check out what I'm all about in the about section.</p>
+            <p>Check out what I am all about in the about section.</p>
           </a>
 
           <a
