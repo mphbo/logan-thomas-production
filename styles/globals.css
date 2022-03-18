@@ -1,9 +1,15 @@
 html,
 body {
+  background-color: #162127;
+  color: white;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.title {
+  color: #31afa7 !important;
 }
 
 a {
@@ -14,3 +20,4 @@ a {
 * {
   box-sizing: border-box;
 }
+/* 4ecdc4 medium turquoise */
