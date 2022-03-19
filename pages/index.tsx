@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import MainPageScroll from "../Components/MainPageScroll/";
 
 const Home: NextPage = () => {
   return (
@@ -13,56 +14,21 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to{" "}
-          <a className="title" href="http://loganthomas.ca">
-            Logan Thomas!
-          </a>
-        </h1>
-
-        <p className={styles.description}>
-          Unfortunately this site is under construction{" "}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="http://loganthomas.ca" className={styles.card}>
-            <h2>Web Projects &rarr;</h2>
-            <p>Find in-depth information about my projects.</p>
-          </a>
-
-          <a href="http://loganthomas.ca" className={styles.card}>
-            <h2>About &rarr;</h2>
-            <p>Check out what I am all about in the about section.</p>
-          </a>
-
-          <a
-            href="https://www.canva.com/design/DAEhZ8vjuBc/EUMbAoelpyf8er338asyYw/view?utm_content=DAEhZ8vjuBc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-            className={styles.card}
-          >
-            <h2>Resume &rarr;</h2>
-            <p>Link to my live resume.</p>
-          </a>
-
-          <a href="http://loganthomas.ca" className={styles.card}>
-            <h2>Other &rarr;</h2>
-            <p>Find other information on myself and what I do.</p>
-          </a>
-        </div>
+        <MainPageScroll />
       </main>
 
-      <footer className={styles.footer}>
-        <a
+      {/* <footer className={styles.footer}> */}
+      {/* <a
           href="http://loganthomas.ca"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          {/* Powered by{' '}
+        > */}
+      {/* Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
-        </a>
-      </footer>
+      {/* </a>
+      </footer> */}
     </div>
   );
 };
