@@ -3,7 +3,7 @@ import { useSpring, animated, config } from "react-spring";
 import styles from "./styles/Heading.module.scss";
 
 interface IHeading {
-  scroll: () => { void };
+  scroll: () => void;
 }
 
 function Heading({ scroll }: IHeading) {
@@ -20,10 +20,7 @@ function Heading({ scroll }: IHeading) {
   return (
     <h1 className={styles.title}>
       <p>SITE UNDER CONSTRUCTION</p>
-      Welcome to{" "}
-      <a className="title" href="http://loganthomas.ca">
-        Logan Thomas!
-      </a>
+      Welcome to <a className="title">Logan Thomas!</a>
       <animated.h1 className={styles.arrow} style={props}>
         <div onClick={scroll}>&darr;</div>
       </animated.h1>
