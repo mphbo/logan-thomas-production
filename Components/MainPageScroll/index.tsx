@@ -13,18 +13,7 @@ function MainPageScroll() {
   };
   return (
     <Parallax pages={3} ref={parallax} style={{ top: "0", left: "0" }}>
-      <ParallaxLayer
-        offset={0}
-        speed={2}
-        onClick={() => scroll(1)}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Heading scroll={() => scroll(2)} />
-      </ParallaxLayer>
+      <Heading scroll={scroll} />
 
       <ParallaxLayer
         offset={1}
@@ -43,7 +32,7 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Section title="Web Projects" nextScroll={() => scroll(2)} />
+        <Section title="Web Projects" outerScroll={() => scroll(2)} />
       </ParallaxLayer>
       <ParallaxLayer
         offset={2}
