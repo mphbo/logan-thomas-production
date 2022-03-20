@@ -4,6 +4,7 @@ import styles from "../../styles/Home.module.css";
 import Heading from "../Heading";
 import Section from "../Section";
 import Technologies from "../Technologies";
+import Projects from "../Projects";
 
 function MainPageScroll() {
   const parallax = useRef<IParallax>(null);
@@ -25,7 +26,7 @@ function MainPageScroll() {
       <ParallaxLayer
         offset={1}
         speed={0.25}
-        onClick={() => scroll(1)}
+        // onClick={() => scroll(1)}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -33,7 +34,14 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Section title="Web Projects" outerScroll={() => scroll(2)} />
+        <Projects
+          scrollDown={() => {
+            scroll(2);
+          }}
+          scrollIntoView={() => {
+            scroll(1);
+          }}
+        />
       </ParallaxLayer>
       <ParallaxLayer
         offset={2}

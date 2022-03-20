@@ -1,4 +1,5 @@
 import { ParallaxLayer } from "@react-spring/parallax";
+import Image from "next/image";
 import React from "react";
 import styles from "../style/Technology.module.scss";
 
@@ -7,7 +8,7 @@ interface ITechnology {
   text?: string;
   scroll?: (to: number) => void;
   offset: number;
-  image?: string;
+  image?: any;
 }
 
 function Technology(props: ITechnology) {
@@ -15,24 +16,24 @@ function Technology(props: ITechnology) {
   return (
     <>
       <ParallaxLayer offset={offset}>
-        <div className={styles.technology}>
-          <h1>{title}</h1>
-          {/* <img src={image} /> */}
-        </div>
+        <div className={styles.technology}>{/* <img src={image} /> */}</div>
       </ParallaxLayer>
       <ParallaxLayer
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundColor: "#162127",
+          //   backgroundImage: `url(${image})`,
           //   backgroundBlendMode: "overlay",
-          backgroundPosition: "center",
-          //   backgroundSize: "cover",
-          //   backgroundColor: "#162127",
-          backgroundRepeat: "no-repeat",
+          //   backgroundPosition: "center",
+          //   backgroundSize: "contain",
+          //   backgroundRepeat: "repeat",
         }}
         offset={offset}
       >
         <div className={styles.technology}>
-          <h1>{title}</h1>
+          <img src={image} />
+          {/* <h1>{title}</h1> */}
+          <p>{text}</p>
+          <div onClick={() => scroll && scroll(offset + 1)}>&rarr;</div>
         </div>
       </ParallaxLayer>
     </>

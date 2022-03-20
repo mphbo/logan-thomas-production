@@ -10,7 +10,7 @@ interface ISection {
   PageComponent?: any;
 }
 
-function index(props: ISection) {
+function Section(props: ISection) {
   const { title, down, text, outerScroll, PageComponent } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
@@ -36,4 +36,4 @@ function index(props: ISection) {
   );
 }
 
-export default index;
+export default Section;
