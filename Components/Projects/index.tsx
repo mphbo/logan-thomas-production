@@ -1,6 +1,7 @@
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import React, { useRef } from "react";
 import SectionHeading from "../Section/components/SectionHeading";
+import Project from "./components/Project";
 
 interface IProjects {
   scrollDown: () => void;
@@ -23,6 +24,21 @@ function Projects(props: IProjects) {
         scroll={() => scroll(1)}
         scrollDown={scrollDown}
         scrollIntoView={scrollIntoView}
+      />
+      <Project
+        title="Max Merge Solutions"
+        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
+        offset={1}
+      />
+      <Project
+        title="Max Merge Solutions"
+        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
+        offset={2}
+      />
+      <Project
+        title="Max Merge Solutions"
+        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
+        offset={3}
       />
       {/* <Technology title="ReactJs" offset={1} />
       <Technology

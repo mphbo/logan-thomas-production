@@ -1,6 +1,7 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
+import { useThemeContext } from "../../context/ThemeContext";
 import styles from "../style/Technology.module.scss";
 
 interface ITechnology {
@@ -13,6 +14,7 @@ interface ITechnology {
 
 function Technology(props: ITechnology) {
   const { title, scroll, text, offset, image } = props;
+  const { color } = useThemeContext();
   return (
     <>
       <ParallaxLayer offset={offset}>
@@ -20,7 +22,7 @@ function Technology(props: ITechnology) {
       </ParallaxLayer>
       <ParallaxLayer
         style={{
-          backgroundColor: "#162127",
+          backgroundColor: offset % 2 === 0 ? color.primary : color.background,
           //   backgroundImage: `url(${image})`,
           //   backgroundBlendMode: "overlay",
           //   backgroundPosition: "center",
@@ -31,9 +33,27 @@ function Technology(props: ITechnology) {
       >
         <div className={styles.technology}>
           <img src={image} />
-          {/* <h1>{title}</h1> */}
           <p>{text}</p>
-          <div onClick={() => scroll && scroll(offset + 1)}>&rarr;</div>
+          {offset < 12 && (
+            <div
+              style={{
+                color: offset % 2 === 0 ? color.background : color.primary,
+              }}
+              onClick={() => scroll && scroll(offset + 1)}
+            >
+              &rarr;
+            </div>
+          )}
+          {offset === 12 && (
+            <div
+              style={{
+                color: offset % 2 === 0 ? color.background : color.primary,
+              }}
+              onClick={() => scroll && scroll(0)}
+            >
+              &larr;
+            </div>
+          )}
         </div>
       </ParallaxLayer>
     </>
