@@ -12,7 +12,7 @@ COPY package.json .
 RUN npm i
 
 # Rebuild the source code only when needed
-FROM node:16-alpine AS builder
+FROM node:14-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package-lock.json ./package-lock.json
