@@ -7,10 +7,11 @@ interface ISection {
   down?: string;
   text?: string;
   outerScroll?: () => void;
+  PageComponent?: any;
 }
 
 function index(props: ISection) {
-  const { title, down, text, outerScroll } = props;
+  const { title, down, text, outerScroll, PageComponent } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -29,13 +30,7 @@ function index(props: ISection) {
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={1} onClick={() => scroll(0)}>
-        <div className={styles.section}>
-          <h1>{title} &rarr;</h1>
-          <div onClick={outerScroll}>
-            <p>Next</p>
-            <p>&darr;</p>
-          </div>
-        </div>
+        {PageComponent}
       </ParallaxLayer>
     </Parallax>
   );

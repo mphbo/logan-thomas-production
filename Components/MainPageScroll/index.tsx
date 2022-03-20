@@ -3,6 +3,7 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import styles from "../../styles/Home.module.css";
 import Heading from "../Heading";
 import Section from "../Section";
+import Technologies from "../Technologies";
 
 function MainPageScroll() {
   const parallax = useRef<IParallax>(null);
@@ -51,7 +52,7 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Section title="Technologies" />
+        <Technologies />
       </ParallaxLayer>
     </Parallax>
   );
