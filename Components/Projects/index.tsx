@@ -27,19 +27,20 @@ function Projects(props: IProjects) {
       />
       <Project
         title="Max Merge Solutions"
-        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
+        summary="A document handling tool for mortgage professionals."
+        tech="A React with Typescript user interface with .NET backend."
+        images={[
+          "/max-merge/1.png",
+          "/max-merge/2.png",
+          "/max-merge/3.png",
+          "/max-merge/4.png",
+          "/max-merge/5.png",
+          "/max-merge/6.png",
+        ]}
         offset={1}
       />
-      <Project
-        title="Max Merge Solutions"
-        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
-        offset={2}
-      />
-      <Project
-        title="Max Merge Solutions"
-        text="ahsdffasjdfoiasjdfajsdfio asodjfoaisdjf asoidfj aoisdjf aiosjd foiasd jfopaisd jfopias djfpoasi djfapo isdf jaiosd fjapoisd fajsd iofaj sdoipfj asdif jasoipdf jaisod fjasio dfj asiodfj aiosd fjaoisd jfioas dfja osdf"
-        offset={3}
-      />
+      {/* <Project title="Max Merge Solutions" offset={2} />
+      <Project title="Max Merge Solutions" offset={3} /> */}
       {/* <Technology title="ReactJs" offset={1} />
       <Technology
         title=""
