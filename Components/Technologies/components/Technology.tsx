@@ -17,17 +17,9 @@ function Technology(props: ITechnology) {
   const { color } = useThemeContext();
   return (
     <>
-      <ParallaxLayer offset={offset}>
-        <div className={styles.technology}>{/* <img src={image} /> */}</div>
-      </ParallaxLayer>
       <ParallaxLayer
         style={{
           backgroundColor: offset % 2 === 0 ? color.primary : color.background,
-          //   backgroundImage: `url(${image})`,
-          //   backgroundBlendMode: "overlay",
-          //   backgroundPosition: "center",
-          //   backgroundSize: "contain",
-          //   backgroundRepeat: "repeat",
         }}
         offset={offset}
       >

@@ -1,5 +1,4 @@
 .title a {
-  color: #31afa7;
   text-decoration: none;
 }
 
@@ -14,9 +13,64 @@
   line-height: 1.15;
   font-size: 4rem;
   text-align: center;
+  font-weight: bold;
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: 15px;
+  }
   p {
     font-size: 20px;
     color: red;
+  }
+}
+
+.developer {
+  font-size: 3rem;
+  color: #31afa7;
+  margin: 0;
+}
+
+.typewriter {
+  margin-bottom: 20px !important;
+  border-right: solid 3px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Source Code Pro", monospace;
+  font-size: 20px !important;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  animation: animated-text 3s linear 1s 1 normal both,
+    animated-cursor 600ms linear infinite;
+}
+.customTypewriter {
+  margin-bottom: 20px !important;
+  border-right: solid 3px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Source Code Pro", monospace;
+  font-size: 20px !important;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  animation: animated-cursor 600ms linear infinite;
+}
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 285px;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(0, 255, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
   }
 }
 
