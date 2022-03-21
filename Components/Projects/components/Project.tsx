@@ -18,16 +18,11 @@ function Project(props: IProject) {
   return (
     <>
       <ParallaxLayer offset={offset}>
-        <div className={styles.technology}>{/* <img src={image} /> */}</div>
+        <div className={styles.technology}></div>
       </ParallaxLayer>
       <ParallaxLayer
         style={{
           backgroundColor: offset % 2 === 0 ? color.primary : color.background,
-          //   backgroundImage: `url(${image})`,
-          //   backgroundBlendMode: "overlay",
-          //   backgroundPosition: "center",
-          //   backgroundSize: "contain",
-          //   backgroundRepeat: "repeat",
         }}
         offset={offset}
       >
