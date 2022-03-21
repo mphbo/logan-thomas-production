@@ -2,7 +2,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
 import { useThemeContext } from "../../context/ThemeContext";
-import styles from "../style/Technology.module.scss";
+import styles from "../styles/Technology.module.scss";
 
 interface ITechnology {
   title: string;
