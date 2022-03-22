@@ -12,7 +12,7 @@ function Technologies() {
     }
   };
   return (
-    <Parallax ref={parallax} pages={13} horizontal>
+    <Parallax ref={parallax} pages={14} horizontal>
       <SectionHeading
         title="Technologies"
         offset={0}
@@ -97,7 +97,7 @@ function Technologies() {
       />
       <Technology
         title="AWS"
-        text="Deploy your application to the most popular cloud deployment service available, AWS. Once deployed, management and scalability are trivial, and your application with suffer no growing pains."
+        text="Deploy your application to the most popular cloud deployment service available, AWS. Once deployed, management and scalability are trivial, and your application will suffer no growing pains."
         offset={12}
         image="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
         scroll={scroll}

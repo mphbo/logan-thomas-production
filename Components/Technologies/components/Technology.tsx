@@ -25,27 +25,31 @@ function Technology(props: ITechnology) {
       >
         <div className={styles.technology}>
           <img src={image} />
-          <p>{text}</p>
-          {offset < 12 && (
-            <div
-              style={{
-                color: offset % 2 === 0 ? color.background : color.primary,
-              }}
-              onClick={() => scroll && scroll(offset + 1)}
-            >
-              &rarr;
-            </div>
-          )}
-          {offset === 12 && (
-            <div
-              style={{
-                color: offset % 2 === 0 ? color.background : color.primary,
-              }}
-              onClick={() => scroll && scroll(0)}
-            >
-              &larr;
-            </div>
-          )}
+          <div className={styles.textContainer}>
+            <p>{text}</p>
+            {offset < 13 && (
+              <div
+                className={styles.arrow}
+                style={{
+                  color: offset % 2 === 0 ? color.background : color.primary,
+                }}
+                onClick={() => scroll && scroll(offset + 1)}
+              >
+                &rarr;
+              </div>
+            )}
+            {offset === 13 && (
+              <div
+                className={styles.arrow}
+                style={{
+                  color: offset % 2 === 0 ? color.background : color.primary,
+                }}
+                onClick={() => scroll && scroll(0)}
+              >
+                &larr;
+              </div>
+            )}
+          </div>
         </div>
       </ParallaxLayer>
     </>
