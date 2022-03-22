@@ -40,7 +40,6 @@ export default function ProjectModal(props: IProjectModal) {
   const handleClose = () => {
     setOpen(false);
   };
-
   const paragraphItems = paragraphs?.map((paragraph, i) => (
     <p key={i}>{paragraph}</p>
   ));
