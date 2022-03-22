@@ -7,7 +7,9 @@ function CustomCarousel({ images }) {
   });
   return (
     <Box width="large" overflow="hidden">
-      <Carousel fill>{imageItems}</Carousel>
+      <Carousel play={2000} fill>
+        {imageItems}
+      </Carousel>
     </Box>
   );
 }
