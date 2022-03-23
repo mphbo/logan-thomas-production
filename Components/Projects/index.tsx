@@ -2,7 +2,6 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import React, { useRef } from "react";
 import SectionHeading from "../Section/components/SectionHeading";
 import Project from "./components/Project";
-import ProjectModal from "./components/ProjectModal";
 
 interface IProjects {
   scrollDown: () => void;
@@ -88,9 +87,9 @@ function Projects(props: IProjects) {
         scroll={scroll}
         offset={3}
         paragraphs={[
-          " - A platform where users can come to browse opportunities to volunteer, or create opportunities for others. A user can view opportunities which can then be sorted, filtered and viewed in two formats; a list view, or a map view. Once a user sees an opportunity they like they then can contact the creator directly or sign up for the opportunity.",
-          " - Better Place is a complex application built with React in the front end, Express/Node in the backend with a PostgreSQL database. Material UI and Ant Design components were used.",
-          " - Googles map API as well as a custom created chat was built into the application with the use of web sockets for live communication.",
+          " - An application for scheduling mock interviews for students and teachers.",
+          " - Scheduler was built with React and Material UI in the frontend.",
+          " - ",
         ]}
         website={{
           name: "Check it out on Github",
