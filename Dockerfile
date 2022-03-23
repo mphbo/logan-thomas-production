@@ -9,7 +9,6 @@ WORKDIR /app
 # If using npm with a `package-lock.json` comment out above and use below instead
 # AWS seems to have issues with old package-lock files, I have not included so that it is created on build
 COPY package.json .
-RUN npm config set registry http://registry.npmjs.org/
 RUN npm i
 
 # Rebuild the source code only when needed
