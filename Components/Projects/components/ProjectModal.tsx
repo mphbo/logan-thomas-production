@@ -7,6 +7,7 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { useThemeContext } from "../../context/ThemeContext";
 import Link from "next/link";
+import styles from "../styles/ProjectModal.module.scss";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -51,6 +52,7 @@ export default function ProjectModal(props: IProjectModal) {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
+        style={{ background: "#162127" }}
       >
         <IconButton
           style={{
@@ -65,24 +67,11 @@ export default function ProjectModal(props: IProjectModal) {
         >
           <CloseIcon />
         </IconButton>
-        <div
-          style={{
-            height: "100%",
-            width: "100%",
-            background: color.background,
-            color: "white",
-            padding: "0 10% 0 10%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <img
-            style={{ width: "90%", height: "auto", marginBottom: 20 }}
-            src={modalImage}
-          />
-          {paragraphItems}
+        <div className={styles.outerContentContainer}>
+          <div className={styles.contentContainer}>
+            <img src={modalImage} />
+            {paragraphItems}
+          </div>
         </div>
 
         <Button
@@ -94,7 +83,9 @@ export default function ProjectModal(props: IProjectModal) {
           }}
         >
           <Link href={website.url}>
-            <a target="_blank">{website.name}</a>
+            <a className={styles.link} target="_blank">
+              {website.name}
+            </a>
           </Link>
         </Button>
       </Dialog>
