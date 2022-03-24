@@ -1,10 +1,8 @@
 import * as React from "react";
 import { Button, Box, Layer, Text } from "grommet";
 import { useThemeContext } from "../../context/ThemeContext";
-import Link from "next/link";
 import styles from "../styles/ProjectModal.module.scss";
 import Image from "next/image";
-import { Close } from "grommet-icons";
 
 interface IProjectModal {
   open: boolean;
@@ -55,7 +53,7 @@ export default function ProjectModal(props: IProjectModal) {
             color={color.background}
             onClick={handleClose}
           >
-            <Close color={color.background} />
+            Close
           </Button>
           <div className={styles.outerContentContainer}>
             <div className={styles.contentContainer}>
@@ -70,7 +68,7 @@ export default function ProjectModal(props: IProjectModal) {
               {paragraphItems}
             </div>
           </div>
-          <a href={website.url}>
+          <a href={website.url} target="_blank" rel="noreferrer">
             <Button
               style={{
                 background: color.primary,
@@ -88,34 +86,6 @@ export default function ProjectModal(props: IProjectModal) {
           </a>
         </Layer>
       )}
-      {/* <IconButton
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            height: 50,
-            background: color.primary,
-            borderRadius: 0,
-            paddingRight: 20,
-          }}
-          onClick={handleClose}
-        >
-          <CloseIcon />
-        </IconButton> */}
-
-      {/* <Button
-          style={{
-            background: color.primary,
-            color: color.background,
-            borderRadius: 0,
-            height: 50,
-          }}
-        >
-          <Link href={website.url}>
-            <a className={styles.link} target="_blank">
-              {website.name}
-            </a>
-          </Link>
-        </Button> */}
     </div>
   );
 }

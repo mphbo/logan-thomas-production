@@ -1,6 +1,5 @@
 import { IParallax, Parallax } from "@react-spring/parallax";
 import React, { useRef } from "react";
-import SectionHeading from "../Section/components/SectionHeading";
 
 function Contact() {
   const parallax = useRef<IParallax>(null);

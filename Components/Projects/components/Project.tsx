@@ -71,7 +71,12 @@ function Project(props: IProject) {
             <Button onClick={toggleOpen}>
               {modalImage && <a className={styles.link}>Read More</a>}
               {!modalImage && (
-                <a href={website.url} target="_blank" className={styles.link}>
+                <a
+                  href={website.url}
+                  rel="noreferrer"
+                  target="_blank"
+                  className={styles.link}
+                >
                   {website.name}
                 </a>
               )}

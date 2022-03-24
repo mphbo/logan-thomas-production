@@ -6,4 +6,4 @@ function Email() {
   return <div></div>;
 }
 
-export default Contact;
+export default Email;
