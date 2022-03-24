@@ -12,10 +12,9 @@
 
 .contentContainer {
   height: 100%;
-  width: 100%;
-  max-width: 900px;
+  width: 80%;
+  max-width: 800px;
   color: white;
-  padding: 0 10% 0 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,7 +28,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .contentContainer img {
@@ -74,7 +73,7 @@
     margin-bottom: 80px;
   }
   .contentContainer p {
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 20px 0;
   }
   .contentContainer .arrow {
