@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ThemeWrapper } from "../Components/context/ThemeContext";
+import { ThemeWrapper } from "../components/context/ThemeContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
