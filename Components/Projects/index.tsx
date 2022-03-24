@@ -96,6 +96,29 @@ function Projects(props: IProjects) {
           url: "https://github.com/mphbo/better-place",
         }}
       />
+      <Project
+        title="Climate Globe"
+        summary="Climate Globe is an application that shows the change in temperature visually around a 3D rendered globe. The goal is to show the change in overall temperature as climate change takes effect."
+        tech="A front facing React/TypeScript interface taking advantage of a 3D rendered globe rendered using ThreeJS/WebGL, as well as Material UI components."
+        images={[
+          "/scheduler/1.png",
+          "/scheduler/2.png",
+          "/scheduler/3.png",
+          "/scheduler/4.png",
+        ]}
+        modalImage={"/scheduler/5.png"}
+        scroll={scroll}
+        offset={3}
+        paragraphs={[
+          " - An application for scheduling mock interviews for students and teachers.",
+          " - Scheduler was built with React and Material UI in the frontend.",
+          " - ",
+        ]}
+        website={{
+          name: "Check it out on Github",
+          url: "https://github.com/mphbo/better-place",
+        }}
+      />
     </Parallax>
   );
 }

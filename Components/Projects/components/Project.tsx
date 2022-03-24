@@ -5,7 +5,7 @@ import { useThemeContext } from "../../context/ThemeContext";
 import styles from "../styles/Project.module.scss";
 import Link from "next/link";
 import CustomCarousel from "../../Carousel/index";
-// import ProjectModal from "./ProjectModal";
+import ProjectModal from "./ProjectModal";
 import { Button } from "grommet";
 
 interface IProject {
@@ -49,13 +49,13 @@ function Project(props: IProject) {
         }}
         offset={offset}
       >
-        {/* <ProjectModal
+        <ProjectModal
           open={open}
           setOpen={setOpen}
           modalImage={modalImage}
           paragraphs={paragraphs}
           website={website}
-        /> */}
+        />
         <div className={styles.project}>
           <h1 style={{ marginBottom: 20 }}>{title}</h1>
           <CustomCarousel images={images} />
