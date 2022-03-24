@@ -80,3 +80,17 @@
   color: #31afa7;
   font-size: 80px;
 }
+.arrow:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  .title {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+  .developer {
+    font-size: 4rem;
+  }
+}

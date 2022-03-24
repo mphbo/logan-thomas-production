@@ -8,17 +8,18 @@ interface ISectionHeading {
   offset: number;
   scrollDown?: () => void;
   scrollIntoView?: () => void;
+  next: string;
 }
 
 function SectionHeading(props: ISectionHeading) {
-  const { title, scroll, scrollDown, scrollIntoView } = props;
+  const { title, next, scroll, scrollDown, scrollIntoView } = props;
   return (
     <ParallaxLayer offset={0}>
       <div className={styles.section}>
         <h1 onClick={scroll}>{title} &rarr;</h1>
         <div onClick={scrollDown}>
-          <p>Next</p>
-          <p>&darr;</p>
+          <p>{next}</p>
+          <p className={styles.arrow}>&darr;</p>
         </div>
       </div>
     </ParallaxLayer>

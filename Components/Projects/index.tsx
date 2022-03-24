@@ -17,14 +17,16 @@ function Projects(props: IProjects) {
     }
   };
   return (
-    <Parallax ref={parallax} pages={4} horizontal>
+    <Parallax ref={parallax} pages={5} horizontal>
       <SectionHeading
         title="Web Projects"
+        next="Next"
         offset={0}
         scroll={() => scroll(1)}
         scrollDown={scrollDown}
         scrollIntoView={scrollIntoView}
       />
+
       <Project
         title="Max Merge Solutions"
         summary="A document handling tool for mortgage professionals."
@@ -37,7 +39,7 @@ function Projects(props: IProjects) {
           "/max-merge/5.png",
           "/max-merge/6.png",
         ]}
-        modalImage={"/max-merge/7.webp"}
+        modalImage={{ src: "/max-merge/7.webp", width: 436, height: 64 }}
         scroll={scroll}
         offset={1}
         paragraphs={[
@@ -50,6 +52,7 @@ function Projects(props: IProjects) {
           url: "https://maxmergesolutions.com",
         }}
       />
+
       <Project
         title="Better Place"
         summary="Better Place is a social media platform for volunteers to help people that are in need."
@@ -60,7 +63,7 @@ function Projects(props: IProjects) {
           "/better-place/3.png",
           "/better-place/4.png",
         ]}
-        modalImage={"/better-place/5.png"}
+        modalImage={{ src: "/better-place/5.png", width: 191, height: 65 }}
         scroll={scroll}
         offset={2}
         paragraphs={[
@@ -73,6 +76,26 @@ function Projects(props: IProjects) {
           url: "https://github.com/mphbo/better-place",
         }}
       />
+
+      <Project
+        title="Climate Globe"
+        summary="Climate Globe is an application that shows the change in temperature visually around a 3D rendered globe."
+        tech="A front facing React/TypeScript interface taking advantage of a 3D rendered globe rendered using ThreeJS/WebGL."
+        images={[
+          "/climate-globe/1.png",
+          "/climate-globe/2.png",
+          "/climate-globe/3.png",
+          "/climate-globe/4.png",
+        ]}
+        // modalImage={{ src: "/scheduler/5.png" }}
+        scroll={scroll}
+        offset={4}
+        website={{
+          name: "Climate-Globe.com",
+          url: "https://msarauer.github.io/climate-globe-deployed/",
+        }}
+      />
+
       <Project
         title="Scheduler"
         summary="Scheduler is a scheduling application for students and teachers."
@@ -83,40 +106,16 @@ function Projects(props: IProjects) {
           "/scheduler/3.png",
           "/scheduler/4.png",
         ]}
-        modalImage={"/scheduler/5.png"}
+        modalImage={{ src: "/scheduler/5.png", width: 493, height: 217 }}
         scroll={scroll}
         offset={3}
         paragraphs={[
           " - An application for scheduling mock interviews for students and teachers.",
-          " - Scheduler was built with React and Material UI in the frontend.",
-          " - ",
+          " - Scheduler was built with React and Material UI in the frontend as well as node in the backend with a PostgreSQL database.",
         ]}
         website={{
           name: "Check it out on Github",
-          url: "https://github.com/mphbo/better-place",
-        }}
-      />
-      <Project
-        title="Climate Globe"
-        summary="Climate Globe is an application that shows the change in temperature visually around a 3D rendered globe. The goal is to show the change in overall temperature as climate change takes effect."
-        tech="A front facing React/TypeScript interface taking advantage of a 3D rendered globe rendered using ThreeJS/WebGL, as well as Material UI components."
-        images={[
-          "/scheduler/1.png",
-          "/scheduler/2.png",
-          "/scheduler/3.png",
-          "/scheduler/4.png",
-        ]}
-        modalImage={"/scheduler/5.png"}
-        scroll={scroll}
-        offset={3}
-        paragraphs={[
-          " - An application for scheduling mock interviews for students and teachers.",
-          " - Scheduler was built with React and Material UI in the frontend.",
-          " - ",
-        ]}
-        website={{
-          name: "Check it out on Github",
-          url: "https://github.com/mphbo/better-place",
+          url: "https://github.com/mphbo/scheduler",
         }}
       />
     </Parallax>

@@ -15,7 +15,11 @@ interface IProject {
   scroll?: (to: number) => void;
   offset: number;
   images?: string[];
-  modalImage?: string;
+  modalImage?: {
+    src: string;
+    width: number;
+    height: number;
+  };
   paragraphs?: string[];
   website: {
     name: string;
@@ -49,13 +53,15 @@ function Project(props: IProject) {
         }}
         offset={offset}
       >
-        <ProjectModal
-          open={open}
-          setOpen={setOpen}
-          modalImage={modalImage}
-          paragraphs={paragraphs}
-          website={website}
-        />
+        {modalImage && (
+          <ProjectModal
+            open={open}
+            setOpen={setOpen}
+            modalImage={modalImage}
+            paragraphs={paragraphs}
+            website={website}
+          />
+        )}
         <div className={styles.project}>
           <h1 style={{ marginBottom: 20 }}>{title}</h1>
           <CustomCarousel images={images} />
@@ -63,17 +69,35 @@ function Project(props: IProject) {
             <p>{summary}</p>
             <p>{tech}</p>
             <Button onClick={toggleOpen}>
-              <a className={styles.link}>Read More</a>
+              {modalImage && <a className={styles.link}>Read More</a>}
+              {!modalImage && (
+                <a href={website.url} target="_blank" className={styles.link}>
+                  {website.name}
+                </a>
+              )}
             </Button>
-            <div
-              className={styles.arrow}
-              style={{
-                color: false ? color.background : color.primary,
-              }}
-              onClick={() => scroll && scroll(offset + 1)}
-            >
-              &rarr;
-            </div>
+            {offset < 4 && (
+              <div
+                className={styles.arrow}
+                style={{
+                  color: false ? color.background : color.primary,
+                }}
+                onClick={() => scroll && scroll(offset + 1)}
+              >
+                &rarr;
+              </div>
+            )}
+            {offset === 4 && (
+              <div
+                className={styles.arrow}
+                style={{
+                  color: false ? color.background : color.primary,
+                }}
+                onClick={() => scroll && scroll(0)}
+              >
+                &larr;
+              </div>
+            )}
           </div>
         </div>
       </ParallaxLayer>

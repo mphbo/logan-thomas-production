@@ -4,12 +4,17 @@ import { useThemeContext } from "../../context/ThemeContext";
 import Link from "next/link";
 import styles from "../styles/ProjectModal.module.scss";
 import Image from "next/image";
+import { Close } from "grommet-icons";
 
 interface IProjectModal {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   paragraphs?: string[];
-  modalImage?: string;
+  modalImage: {
+    src: string;
+    width: number;
+    height: number;
+  };
   website: {
     name: string;
     url: string;
@@ -21,10 +26,6 @@ export default function ProjectModal(props: IProjectModal) {
 
   const { color } = useThemeContext();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -32,26 +33,61 @@ export default function ProjectModal(props: IProjectModal) {
     <p key={i}>{paragraph}</p>
   ));
 
+  console.log(modalImage);
   return (
     <div>
-      <Box>
-        {open && (
-          <Layer
-            onEsc={() => setOpen(false)}
-            onClickOutside={() => setOpen(false)}
-            position="bottom"
-            full={true}
-            modal={true}
+      {open && (
+        <Layer
+          onEsc={handleClose}
+          onClickOutside={handleClose}
+          position="bottom"
+          full={true}
+          modal={true}
+        >
+          <Button
+            style={{
+              background: color.primary,
+              height: 50,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            color={color.background}
+            onClick={handleClose}
           >
-            <div className={styles.outerContentContainer}>
-              <div className={styles.contentContainer}>
-                <img src={modalImage} />
-                {paragraphItems}
+            <Close color={color.background} />
+          </Button>
+          <div className={styles.outerContentContainer}>
+            <div className={styles.contentContainer}>
+              <div style={{ width: "100%", marginBottom: 30 }}>
+                <Image
+                  layout="responsive"
+                  width={modalImage.width}
+                  height={modalImage.height}
+                  src={modalImage.src}
+                />
               </div>
+              {paragraphItems}
             </div>
-          </Layer>
-        )}
-      </Box>
+          </div>
+          <a href={website.url}>
+            <Button
+              style={{
+                background: color.primary,
+                height: 50,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+              color={color.background}
+              onClick={handleClose}
+            >
+              {website.name}
+            </Button>
+          </a>
+        </Layer>
+      )}
       {/* <IconButton
           style={{
             display: "flex",

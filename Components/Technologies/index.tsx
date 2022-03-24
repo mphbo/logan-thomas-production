@@ -4,7 +4,13 @@ import SectionHeading from "../Section/components/SectionHeading";
 import Technology from "./components/Technology";
 import Image from "next/image";
 
-function Technologies() {
+interface ITechnologies {
+  scrollDown: () => void;
+  scrollIntoView: () => void;
+}
+
+function Technologies(props: ITechnologies) {
+  const { scrollDown, scrollIntoView } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -15,8 +21,10 @@ function Technologies() {
     <Parallax ref={parallax} pages={14} horizontal>
       <SectionHeading
         title="Technologies"
+        next="Contact"
         offset={0}
         scroll={() => scroll(1)}
+        scrollDown={scrollDown}
       />
       <Technology
         title="ReactJs"
