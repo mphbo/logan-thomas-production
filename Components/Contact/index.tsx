@@ -69,7 +69,6 @@ function Contact() {
         onChange={(value) => {
           setEmail(value);
           setError("");
-          console.log(email);
           setThankYou(false);
         }}
         onReset={() => setEmail({ name: "", email: "", message: "" })}
