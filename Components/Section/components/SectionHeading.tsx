@@ -16,7 +16,9 @@ function SectionHeading(props: ISectionHeading) {
   return (
     <ParallaxLayer offset={0}>
       <div className={styles.section}>
-        <h1 onClick={scroll}>{title} &rarr;</h1>
+        <h1 className={styles.arrow} onClick={scroll}>
+          {title} &rarr;
+        </h1>
         <div onClick={scrollDown}>
           <p>{next}</p>
           <p className={styles.arrow}>&darr;</p>

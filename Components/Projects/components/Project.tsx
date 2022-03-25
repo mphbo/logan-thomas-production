@@ -63,12 +63,12 @@ function Project(props: IProject) {
           />
         )}
         <div className={styles.project}>
-          <h1 style={{ marginBottom: 20 }}>{title}</h1>
+          <h1>{title}</h1>
           <CustomCarousel images={images} />
           <div className={styles.textContainer}>
             <p>{summary}</p>
             <p>{tech}</p>
-            <Button onClick={toggleOpen}>
+            <Button style={{ margin: "15px 0 10px 0" }} onClick={toggleOpen}>
               {modalImage && <a className={styles.link}>Read More</a>}
               {!modalImage && (
                 <a

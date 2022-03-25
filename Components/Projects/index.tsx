@@ -89,7 +89,7 @@ function Projects(props: IProjects) {
         ]}
         // modalImage={{ src: "/scheduler/5.png" }}
         scroll={scroll}
-        offset={4}
+        offset={3}
         website={{
           name: "Climate-Globe.com",
           url: "https://msarauer.github.io/climate-globe-deployed/",
@@ -108,7 +108,7 @@ function Projects(props: IProjects) {
         ]}
         modalImage={{ src: "/scheduler/5.png", width: 493, height: 217 }}
         scroll={scroll}
-        offset={3}
+        offset={4}
         paragraphs={[
           " - An application for scheduling mock interviews for students and teachers.",
           " - Scheduler was built with React and Material UI in the frontend as well as node in the backend with a PostgreSQL database.",

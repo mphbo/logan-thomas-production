@@ -84,13 +84,13 @@
   cursor: pointer;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1600px) {
   .title {
     h1 {
-      font-size: 5rem;
+      font-size: 3.5vw;
     }
   }
   .developer {
-    font-size: 4rem;
+    font-size: 3vw;
   }
 }
