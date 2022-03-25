@@ -9,24 +9,24 @@ script:
   - docker run -e CI=true mphbo/logan-thomas-production npm run lint
 
 deploy:
-  - provider: elasticbeanstalk
-    region: "us-east-1"
-    app: "logan thomas production"
-    env: "Loganthomasproduction-env"
-    bucket_name: "elasticbeanstalk-us-east-1-080740215952"
-    bucket_path: "logan-thomas-production"
-    on:
-      branch: main
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "logan thomas production"
+  env: "Loganthomasproduction-env"
+  bucket_name: "elasticbeanstalk-us-east-1-080740215952"
+  bucket_path: "logan-thomas-production"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 
-  - provider: elasticbeanstalk
-    region: "us-east-1"
-    app: "staging"
-    env: "Staging-env"
-    bucket_name: "elasticbeanstalk-us-east-1-080740215952"
-    bucket_path: "staging"
-    on:
-      branch: development
-    access_key_id: $AWS_ACCESS_KEY_STAGING
-    secret_access_key: $AWS_SECRET_KEY_STAGING
+  # provider: elasticbeanstalk
+  # region: "us-east-1"
+  # app: "staging"
+  # env: "Staging-env"
+  # bucket_name: "elasticbeanstalk-us-east-1-080740215952"
+  # bucket_path: "staging"
+  # on:
+  #   branch: development
+  # access_key_id: $AWS_ACCESS_KEY_STAGING
+  # secret_access_key: $AWS_SECRET_KEY_STAGING
