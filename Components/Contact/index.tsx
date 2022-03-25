@@ -26,6 +26,7 @@ function Contact() {
       parallax.current.scrollTo(to);
     }
   };
+  // form endpoint for emails
   const FORM_ENDPOINT =
     "https://public.herotofu.com/v1/4e784200-abe4-11ec-9c35-5156bf57ed5d";
 
