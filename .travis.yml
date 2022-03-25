@@ -27,6 +27,6 @@ deploy:
     bucket_name: "elasticbeanstalk-us-east-1-080740215952"
     bucket_path: "staging"
     on:
-    branch: development
+      branch: development
     access_key_id: $AWS_ACCESS_KEY_STAGING
     secret_access_key: $AWS_SECRET_KEY_STAGING
