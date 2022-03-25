@@ -7,10 +7,9 @@
 }
 .contentContainer {
   height: 100%;
-  width: 100%;
+  width: 80%;
   max-width: 800px;
   color: white;
-  margin: 0 10% 0 10%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -63,7 +62,7 @@
       margin-bottom: 80px;
     }
     p {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 20px 0;
     }
     .arrow {

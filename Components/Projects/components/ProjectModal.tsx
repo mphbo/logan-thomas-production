@@ -1,102 +1,91 @@
-// import * as React from "react";
-// import Button from "@mui/material/Button";
-// import Dialog from "@mui/material/Dialog";
-// import IconButton from "@mui/material/IconButton";
-// import CloseIcon from "@mui/icons-material/Close";
-// import Slide from "@mui/material/Slide";
-// import { TransitionProps } from "@mui/material/transitions";
-// import { useThemeContext } from "../../context/ThemeContext";
-// import Link from "next/link";
-// import styles from "../styles/ProjectModal.module.scss";
-// import Image from "next/image";
+import * as React from "react";
+import { Button, Box, Layer, Text } from "grommet";
+import { useThemeContext } from "../../context/ThemeContext";
+import styles from "../styles/ProjectModal.module.scss";
+import Image from "next/image";
 
-// const Transition = React.forwardRef(function Transition(
-//   props: TransitionProps & {
-//     children: React.ReactElement;
-//   },
-//   ref: React.Ref<unknown>
-// ) {
-//   return <Slide direction="up" ref={ref} {...props} />;
-// });
-
-// interface IProjectModal {
-//   open: boolean;
-//   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-//   paragraphs?: string[];
-//   modalImage?: string;
-//   website: {
-//     name: string;
-//     url: string;
-//   };
-// }
-
-// export default function ProjectModal(props: IProjectModal) {
-//   const { open, setOpen, modalImage, paragraphs, website } = props;
-
-//   const { color } = useThemeContext();
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-//   const paragraphItems = paragraphs?.map((paragraph, i) => (
-//     <p key={i}>{paragraph}</p>
-//   ));
-
-//   return (
-//     <div>
-//       <Dialog
-//         fullScreen
-//         open={open}
-//         onClose={handleClose}
-//         TransitionComponent={Transition}
-//         style={{ background: "#162127" }}
-//       >
-//         <IconButton
-//           style={{
-//             display: "flex",
-//             justifyContent: "flex-end",
-//             height: 50,
-//             background: color.primary,
-//             borderRadius: 0,
-//             paddingRight: 20,
-//           }}
-//           onClick={handleClose}
-//         >
-//           <CloseIcon />
-//         </IconButton>
-//         <div className={styles.outerContentContainer}>
-//           <div className={styles.contentContainer}>
-//             <Image src={modalImage} />
-//             {paragraphItems}
-//           </div>
-//         </div>
-
-//         <Button
-//           style={{
-//             background: color.primary,
-//             color: color.background,
-//             borderRadius: 0,
-//             height: 50,
-//           }}
-//         >
-//           <Link href={website.url}>
-//             <a className={styles.link} target="_blank">
-//               {website.name}
-//             </a>
-//           </Link>
-//         </Button>
-//       </Dialog>
-//     </div>
-//   );
-// }
-import React from "react";
-
-function ProjectModal() {
-  return <div>ProjectModal</div>;
+interface IProjectModal {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  paragraphs?: string[];
+  modalImage: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  website: {
+    name: string;
+    url: string;
+  };
 }
 
-export default ProjectModal;
+export default function ProjectModal(props: IProjectModal) {
+  const { open, setOpen, modalImage, paragraphs, website } = props;
+
+  const { color } = useThemeContext();
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const paragraphItems = paragraphs?.map((paragraph, i) => (
+    <p key={i}>{paragraph}</p>
+  ));
+
+  console.log(modalImage);
+  return (
+    <div>
+      {open && (
+        <Layer
+          onEsc={handleClose}
+          onClickOutside={handleClose}
+          position="bottom"
+          full={true}
+          modal={true}
+        >
+          <Button
+            style={{
+              background: color.primary,
+              height: 50,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            color={color.background}
+            onClick={handleClose}
+          >
+            Close
+          </Button>
+          <div className={styles.outerContentContainer}>
+            <div className={styles.contentContainer}>
+              <div style={{ width: "100%", marginBottom: 30 }}>
+                <Image
+                  layout="responsive"
+                  width={modalImage.width}
+                  height={modalImage.height}
+                  src={modalImage.src}
+                />
+              </div>
+              {paragraphItems}
+            </div>
+          </div>
+          <a href={website.url} target="_blank" rel="noreferrer">
+            <Button
+              style={{
+                background: color.primary,
+                height: 50,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+              color={color.background}
+              onClick={handleClose}
+            >
+              {website.name}
+            </Button>
+          </a>
+        </Layer>
+      )}
+    </div>
+  );
+}

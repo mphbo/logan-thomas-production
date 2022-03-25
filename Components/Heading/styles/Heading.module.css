@@ -14,15 +14,17 @@
   font-size: 4rem;
   text-align: center;
   font-weight: bold;
-  h1 {
-    font-size: 4rem;
-    margin: 0;
-    margin-bottom: 15px;
-  }
-  p {
-    font-size: 20px;
-    color: red;
-  }
+}
+
+.title h1 {
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.title p {
+  font-size: 20px;
+  color: red;
 }
 
 .developer {
@@ -40,9 +42,10 @@
   font-size: 20px !important;
   color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
-  animation: animated-text 3s linear 1s 1 normal both,
-    animated-cursor 600ms linear infinite;
+  -webkit-animation: animated-text 3s linear 1s 1 normal both, animated-cursor 600ms linear infinite;
+          animation: animated-text 3s linear 1s 1 normal both, animated-cursor 600ms linear infinite;
 }
+
 .customTypewriter {
   margin-bottom: 20px !important;
   border-right: solid 3px rgba(0, 255, 0, 0.75);
@@ -52,8 +55,19 @@
   font-size: 20px !important;
   color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
-  animation: animated-cursor 600ms linear infinite;
+  -webkit-animation: animated-cursor 600ms linear infinite;
+          animation: animated-cursor 600ms linear infinite;
 }
+
+@-webkit-keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 285px;
+  }
+}
+
 @keyframes animated-text {
   from {
     width: 0;
@@ -64,7 +78,14 @@
 }
 
 /* cursor animations */
-
+@-webkit-keyframes animated-cursor {
+  from {
+    border-right-color: rgba(0, 255, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 @keyframes animated-cursor {
   from {
     border-right-color: rgba(0, 255, 0, 0.75);
@@ -80,17 +101,17 @@
   color: #31afa7;
   font-size: 80px;
 }
+
 .arrow:hover {
   cursor: pointer;
 }
 
-@media (min-width: 1600px) {
-  .title {
-    h1 {
-      font-size: 3.5vw;
-    }
+@media (min-width: 1000px) {
+  .title h1 {
+    font-size: 5rem;
   }
   .developer {
-    font-size: 3vw;
+    font-size: 4rem;
   }
 }
+/*# sourceMappingURL=Heading.module.css.map */

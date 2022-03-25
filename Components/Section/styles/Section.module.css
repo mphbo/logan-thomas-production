@@ -1,0 +1,84 @@
+.section {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section h1 {
+  font-size: 10vw;
+}
+
+.section div {
+  font-size: 7vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.section div p {
+  margin: 0;
+}
+
+.section .arrow:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .section h1 {
+    font-size: 8vw;
+  }
+  .section p {
+    font-size: 5.5vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .section h1 {
+    font-size: 7vw;
+  }
+  .section p {
+    font-size: 5vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .section h1 {
+    font-size: 6vw;
+  }
+  .section p {
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section h1 {
+    font-size: 4.5vw;
+  }
+  .section p {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 1500px) {
+  .section h1 {
+    font-size: 3.5vw;
+  }
+  .section p {
+    font-size: 2vw;
+  }
+}
+/*# sourceMappingURL=Section.module.css.map */
