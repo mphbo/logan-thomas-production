@@ -48,15 +48,20 @@ function Contact(props: IContact) {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          scrollIntoView();
           setThankYou(true);
         })
         .catch((e) => {
           setThankYou(true);
+          scrollIntoView();
           console.log(e);
         });
     } else {
       setError("Please add an Email in the correct formet.");
     }
+    setTimeout(() => {
+      scrollIntoView();
+    }, 100);
   };
 
   const typewriter = (typewriter: any) => {
@@ -104,13 +109,16 @@ function Contact(props: IContact) {
           <TextInput onClick={scrollIntoView} id="text-input-id" name="email" />
         </FormField>
         <FormField
-          onClick={scrollIntoView}
           className={styles.message}
           name="message"
           htmlFor="text-input-id"
           label="Message"
         >
-          <TextArea id="text-input-id" name="message" />
+          <TextArea
+            onClick={scrollIntoView}
+            id="text-input-id"
+            name="message"
+          />
         </FormField>
         <Box direction="row" justify="between" gap="medium">
           <Box gap="medium" direction="row">
