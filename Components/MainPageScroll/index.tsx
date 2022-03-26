@@ -36,12 +36,9 @@ function MainPageScroll() {
         }}
       >
         <Projects
-          scrollDown={() => {
-            scroll(2);
-          }}
-          scrollIntoView={() => {
-            scroll(1);
-          }}
+          scrollUp={() => scroll(0)}
+          scrollDown={() => scroll(2)}
+          scrollIntoView={() => scroll(1)}
         />
       </ParallaxLayer>
       <ParallaxLayer
@@ -62,12 +59,9 @@ function MainPageScroll() {
         }}
       >
         <Technologies
-          scrollDown={() => {
-            scroll(3);
-          }}
-          scrollIntoView={() => {
-            scroll(2);
-          }}
+          scrollUp={() => scroll(1)}
+          scrollDown={() => scroll(3)}
+          scrollIntoView={() => scroll(2)}
         />
       </ParallaxLayer>
       <ParallaxLayer
@@ -87,7 +81,7 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Contact />
+        <Contact scrollUp={() => scroll(2)} scrollIntoView={() => scroll(3)} />
       </ParallaxLayer>
     </Parallax>
   );

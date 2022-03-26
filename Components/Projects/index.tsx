@@ -5,11 +5,12 @@ import Project from "./components/Project";
 
 interface IProjects {
   scrollDown: () => void;
+  scrollUp: () => void;
   scrollIntoView: () => void;
 }
 
 function Projects(props: IProjects) {
-  const { scrollDown, scrollIntoView } = props;
+  const { scrollDown, scrollUp, scrollIntoView } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -20,10 +21,12 @@ function Projects(props: IProjects) {
     <Parallax ref={parallax} pages={5} horizontal>
       <SectionHeading
         title="Web Projects"
+        previous="Back"
         next="Next"
         offset={0}
         scroll={() => scroll(1)}
         scrollDown={scrollDown}
+        scrollUp={scrollUp}
         scrollIntoView={scrollIntoView}
       />
 
@@ -43,8 +46,8 @@ function Projects(props: IProjects) {
         scroll={scroll}
         offset={1}
         paragraphs={[
-          " - Max Merge Solutions is a premium service tailored to mortgage broker professionals with a serious entourage of specialized tools. The main feature being the high end document merge process which can merge all of your documents into one, compress them and send customized emails. Users can also use the highly effective year to date calculator to calculate finances.",
-          "- Max Merge Solutions was written in modern frontend technologies. Specifically, TypeScript to secure the application with type safety, Material UI to increase development speed as well as provide consistency, and most importantly the frontend was built with ReactJS for speed, interactivity and to reduce load times.",
+          " - Max Merge Solutions is a premium service tailored to mortgage broker professionals. The main feature being the high end document merge process which can merge all of your documents into one, compress them and send customized emails. Check out the url below to book a demo.",
+          "- TypeScript was used to secure the application with type safety, Material UI to increase development speed as well as provide consistency, and most importantly the frontend was built with ReactJS for speed, interactivity and to reduce load times.",
           "- The backend was build in the robost .NET framework with strong api design principles to protect users and the database.",
         ]}
         website={{
@@ -67,7 +70,7 @@ function Projects(props: IProjects) {
         scroll={scroll}
         offset={2}
         paragraphs={[
-          " - A platform where users can come to browse opportunities to volunteer, or create opportunities for others. A user can view opportunities which can then be sorted, filtered and viewed in two formats; a list view, or a map view. Once a user sees an opportunity they like they then can contact the creator directly or sign up for the opportunity.",
+          " - A platform where users come to browse opportunities to volunteer, or create opportunities for others.",
           " - Better Place is a complex application built with React in the front end, Express/Node in the backend with a PostgreSQL database. Material UI and Ant Design components were used.",
           " - Googles map API as well as a custom created chat was built into the application with the use of web sockets for live communication.",
         ]}

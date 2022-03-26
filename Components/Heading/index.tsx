@@ -55,7 +55,7 @@ function Heading({ scroll }: IHeading) {
       }}
     >
       <div className={styles.title}>
-        <p className={styles.typewriter}>SITE UNDER CONSTRUCTION</p>
+        {/* <p className={styles.typewriter}>SITE UNDER CONSTRUCTION</p> */}
         <h1>Logan Thomas </h1>
         <h2 className={styles.developer}>
           <Typewriter
