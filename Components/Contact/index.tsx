@@ -86,8 +86,13 @@ function Contact(props: IContact) {
         method="POST"
         target="_blank"
       >
-        <FormField name="name" htmlFor="text-input-id" label="Name">
-          <TextInput className={styles.name} id="text-input-id" name="name" />
+        <FormField
+          className={styles.name}
+          name="name"
+          htmlFor="text-input-id"
+          label="Name"
+        >
+          <TextInput onClick={scrollIntoView} id="text-input-id" name="name" />
         </FormField>
         <FormField
           error={error}
@@ -96,9 +101,10 @@ function Contact(props: IContact) {
           htmlFor="text-input-id"
           label="Email"
         >
-          <TextInput id="text-input-id" name="email" />
+          <TextInput onClick={scrollIntoView} id="text-input-id" name="email" />
         </FormField>
         <FormField
+          onClick={scrollIntoView}
           className={styles.message}
           name="message"
           htmlFor="text-input-id"
