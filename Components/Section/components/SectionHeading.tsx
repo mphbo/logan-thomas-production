@@ -7,15 +7,29 @@ interface ISectionHeading {
   scroll?: () => void;
   offset: number;
   scrollDown?: () => void;
+  scrollUp?: () => void;
   scrollIntoView?: () => void;
+  previous: string;
   next: string;
 }
 
 function SectionHeading(props: ISectionHeading) {
-  const { title, next, scroll, scrollDown, scrollIntoView } = props;
+  const {
+    title,
+    previous,
+    next,
+    scroll,
+    scrollDown,
+    scrollUp,
+    scrollIntoView,
+  } = props;
   return (
     <ParallaxLayer offset={0}>
       <div className={styles.section}>
+        <div onClick={scrollUp}>
+          <p className={styles.arrow}>&uarr;</p>
+          <p>{previous}</p>
+        </div>
         <h1 className={styles.arrow} onClick={scroll}>
           {title} &rarr;
         </h1>

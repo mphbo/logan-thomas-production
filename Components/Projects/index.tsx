@@ -5,11 +5,12 @@ import Project from "./components/Project";
 
 interface IProjects {
   scrollDown: () => void;
+  scrollUp: () => void;
   scrollIntoView: () => void;
 }
 
 function Projects(props: IProjects) {
-  const { scrollDown, scrollIntoView } = props;
+  const { scrollDown, scrollUp, scrollIntoView } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -20,10 +21,12 @@ function Projects(props: IProjects) {
     <Parallax ref={parallax} pages={5} horizontal>
       <SectionHeading
         title="Web Projects"
+        previous="Back"
         next="Next"
         offset={0}
         scroll={() => scroll(1)}
         scrollDown={scrollDown}
+        scrollUp={scrollUp}
         scrollIntoView={scrollIntoView}
       />
 

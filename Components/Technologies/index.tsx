@@ -6,11 +6,12 @@ import Image from "next/image";
 
 interface ITechnologies {
   scrollDown: () => void;
+  scrollUp: () => void;
   scrollIntoView: () => void;
 }
 
 function Technologies(props: ITechnologies) {
-  const { scrollDown, scrollIntoView } = props;
+  const { scrollDown, scrollUp, scrollIntoView } = props;
   const parallax = useRef<IParallax>(null);
   const scroll = (to: number) => {
     if (parallax.current) {
@@ -22,9 +23,11 @@ function Technologies(props: ITechnologies) {
       <SectionHeading
         title="Technologies"
         next="Contact"
+        previous="Projects"
         offset={0}
         scroll={() => scroll(1)}
         scrollDown={scrollDown}
+        scrollUp={scrollUp}
       />
       <Technology
         title="ReactJs"

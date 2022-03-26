@@ -11,7 +11,12 @@ interface IEmail {
   message: string;
 }
 
-function Contact() {
+interface IContact {
+  scrollUp: () => void;
+}
+
+function Contact(props: IContact) {
+  const { scrollUp } = props;
   const [email, setEmail] = useState<IEmail>({
     name: "",
     email: "",
@@ -79,10 +84,11 @@ function Contact() {
         target="_blank"
       >
         <FormField name="name" htmlFor="text-input-id" label="Name">
-          <TextInput id="text-input-id" name="name" />
+          <TextInput className={styles.name} id="text-input-id" name="name" />
         </FormField>
         <FormField
           error={error}
+          className={styles.email}
           name="email"
           htmlFor="text-input-id"
           label="Email"
@@ -97,20 +103,32 @@ function Contact() {
         >
           <TextArea id="text-input-id" name="message" />
         </FormField>
-        <Box direction="row" gap="medium">
+        <Box direction="row" justify="between" gap="medium">
+          <Box gap="medium" direction="row">
+            <Button
+              color={color.background}
+              className={styles.button}
+              size="small"
+              type="submit"
+              primary
+              label="Submit"
+            />
+            <Button
+              color={color.background}
+              className={styles.button}
+              size="small"
+              type="reset"
+              label="Reset"
+            />
+          </Box>
           <Button
-            color={color.background}
-            size="large"
-            type="submit"
-            primary
-            label="Submit"
-          />
-          <Button
+            onClick={scrollUp}
             color={color.background}
             className={styles.button}
-            size="large"
-            type="reset"
-            label="Reset"
+            style={{ alignSelf: "flex-end" }}
+            size="small"
+            primary
+            label="Back &uarr;"
           />
         </Box>
       </Form>
