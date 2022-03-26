@@ -9,19 +9,95 @@
   flex-direction: column;
   h1,
   .typewriter {
-    font-size: 4rem;
+    font-size: 2rem;
     align-self: flex-start;
-    margin: 0 0 50px 0;
+    margin: 0 0 30px 0;
     color: #162127;
+  }
+  .arrowContainer {
+    margin-bottom: 30px;
+    p {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    align-self: center;
+    text-align: center;
+  }
+  .arrow:hover {
+    cursor: pointer;
   }
   .form {
     width: 100%;
   }
+  .name {
+    font-size: 1.5rem;
+  }
+  .email {
+    font-size: 1.5rem;
+  }
   .message {
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
   .button {
     color: white;
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+}
+
+@media (min-width: 500px) {
+  .contact {
+    .typewriter,
+    h1 {
+      font-size: 3rem;
+    }
+    .arrowContainer {
+      p {
+        font-size: 2rem;
+      }
+    }
+    .name {
+      font-size: 2rem;
+    }
+    .email {
+      font-size: 2rem;
+    }
+    .message {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+    }
+    .button {
+      margin-bottom: 0;
+      padding: 4px 22px;
+      font-size: 18px;
+      line-height: 24px;
+      border-radius: 18px;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .contact {
+    .button {
+      margin-bottom: 0;
+      padding: 8px 32px;
+      font-size: 22px;
+      line-height: 28px;
+      border-radius: 24px;
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .contact {
+    .arrowContainer {
+      p {
+        font-size: 2vw;
+      }
+    }
   }
 }

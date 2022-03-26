@@ -57,8 +57,9 @@ export default function ProjectModal(props: IProjectModal) {
           </Button>
           <div className={styles.outerContentContainer}>
             <div className={styles.contentContainer}>
-              <div style={{ width: "100%", marginBottom: 30 }}>
+              <div className={styles.image}>
                 <Image
+                  className={styles.image}
                   layout="responsive"
                   width={modalImage.width}
                   height={modalImage.height}

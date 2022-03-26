@@ -15,11 +15,10 @@
   flex-direction: column;
   justify-content: center;
   line-height: 1.4;
-  img {
+  .image {
     width: 100%;
-    max-width: 600px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   p {
     margin: 8px 0;
@@ -35,7 +34,7 @@
     .arrow {
       font-size: 70px;
     }
-    img {
+    .image {
       margin-bottom: 40px;
     }
   }
@@ -43,7 +42,7 @@
 
 @media (min-width: 700px) {
   .contentContainer {
-    img {
+    .image {
       margin-bottom: 60px;
     }
     p {
@@ -58,15 +57,15 @@
 
 @media (min-width: 1000px) {
   .contentContainer {
-    img {
-      margin-bottom: 80px;
-    }
     p {
       font-size: 28px;
       margin-bottom: 20px 0;
     }
     .arrow {
       font-size: 70px;
+    }
+    .image {
+      margin-bottom: 80px;
     }
   }
 }

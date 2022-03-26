@@ -11,7 +11,13 @@ interface IEmail {
   message: string;
 }
 
-function Contact() {
+interface IContact {
+  scrollUp: () => void;
+  scrollIntoView: () => void;
+}
+
+function Contact(props: IContact) {
+  const { scrollUp, scrollIntoView } = props;
   const [email, setEmail] = useState<IEmail>({
     name: "",
     email: "",
@@ -31,6 +37,7 @@ function Contact() {
     "https://public.herotofu.com/v1/4e784200-abe4-11ec-9c35-5156bf57ed5d";
 
   const handleSendEmail = (email: IEmail) => {
+    scrollIntoView();
     if (email.email.includes("@" && ".")) {
       const requestOptions = {
         method: "POST",
@@ -41,15 +48,25 @@ function Contact() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          scrollIntoView();
           setThankYou(true);
         })
         .catch((e) => {
           setThankYou(true);
+          scrollIntoView();
           console.log(e);
         });
     } else {
       setError("Please add an Email in the correct formet.");
     }
+    setTimeout(() => {
+      scrollIntoView();
+    }, 100);
+  };
+
+  const handleReset = () => {
+    setEmail({ name: "", email: "", message: "" });
+    scrollIntoView();
   };
 
   const typewriter = (typewriter: any) => {
@@ -58,7 +75,7 @@ function Contact() {
 
   return (
     <div className={styles.contact}>
-      {!thankYou && <h1>Contact:</h1>}
+      {!thankYou && <h1>Contact Me:</h1>}
       {thankYou && (
         <div className={styles.typewriter}>
           <Typewriter options={{ autoStart: true }} onInit={typewriter} />
@@ -71,23 +88,30 @@ function Contact() {
           setEmail(value);
           setError("");
           setThankYou(false);
+          scrollIntoView();
         }}
-        onReset={() => setEmail({ name: "", email: "", message: "" })}
+        onReset={handleReset}
         onSubmit={({ value }) => handleSendEmail(value)}
         action={FORM_ENDPOINT}
         method="POST"
         target="_blank"
       >
-        <FormField name="name" htmlFor="text-input-id" label="Name">
-          <TextInput id="text-input-id" name="name" />
+        <FormField
+          className={styles.name}
+          name="name"
+          htmlFor="text-input-id"
+          label="Name"
+        >
+          <TextInput onClick={scrollIntoView} id="text-input-id" name="name" />
         </FormField>
         <FormField
           error={error}
+          className={styles.email}
           name="email"
           htmlFor="text-input-id"
           label="Email"
         >
-          <TextInput id="text-input-id" name="email" />
+          <TextInput onClick={scrollIntoView} id="text-input-id" name="email" />
         </FormField>
         <FormField
           className={styles.message}
@@ -95,22 +119,38 @@ function Contact() {
           htmlFor="text-input-id"
           label="Message"
         >
-          <TextArea id="text-input-id" name="message" />
-        </FormField>
-        <Box direction="row" gap="medium">
-          <Button
-            color={color.background}
-            size="large"
-            type="submit"
-            primary
-            label="Submit"
+          <TextArea
+            onClick={scrollIntoView}
+            id="text-input-id"
+            name="message"
           />
+        </FormField>
+        <Box direction="row" justify="between" gap="medium">
+          <Box gap="medium" direction="row">
+            <Button
+              color={color.background}
+              className={styles.button}
+              size="small"
+              type="submit"
+              primary
+              label="Submit"
+            />
+            <Button
+              color={color.background}
+              className={styles.button}
+              size="small"
+              type="reset"
+              label="Reset"
+            />
+          </Box>
           <Button
+            onClick={scrollUp}
             color={color.background}
             className={styles.button}
-            size="large"
-            type="reset"
-            label="Reset"
+            style={{ alignSelf: "flex-end" }}
+            size="small"
+            primary
+            label="Back &uarr;"
           />
         </Box>
       </Form>

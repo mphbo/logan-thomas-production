@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Description
 
-## Getting Started
+This mobile first project was a big step for me. Not because the project itself was a breakthrough; it's a portfolio site. It was a breakthrough because I spent multiple weeks prior learning new technologies to implement in the process of building this website:
 
-First, run the development server:
+- I learned NextJS which this site is built with
+- I learned how to dockerize my application
+- I learned how to deploy a containerized application to AWS Elastic Beanstalk
+- I also learned how to animate page scrolls with react-springs parallax, as well as other effects I had not used before
 
-```bash
-npm run dev
-# or
-yarn dev
+## Features
+
+As a portfolio site, there is not a lot of functionality, the following features have been implemented in this application as of March 26th, 2022:
+
+- Custom button navigation of entire site
+- Contact form which emails me directly through the use of HeroTofu
+
+
+## Tech Stack
+
+- Front End: React, NextJS
+- Component Libraries: Grommet, React Spring (Parallax and Animation)
+- CSS Preprocessor: Sass
+- APIs: HeroTofu for messaging.
+
+## Screenshots
+
+### Main view / start of navigation.
+
+!["Screenshot of MAIN view"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/1.png)
+
+### Beginning of Web Projects Section.
+
+!["Screenshot of HEADING for Web Projects"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/2.png)
+
+### Example of the Project component views.
+
+!["Screenshot the Project component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/3.png)
+
+### Example of the Project Modal component.
+
+!["Screenshot of Project Modal component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/4.png)
+
+### Beginning of the Skills section.
+
+!["Screenshot of HEADING for Skills section"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/5.png)
+
+### Example of the Technology component.
+
+!["Screenshot of Technology component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/6.png)
+
+### Contact Me page, where a user can send me an email directly using the HeroTofu API.
+
+!["Screenshot of the Contact component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/6.png)
+
+
+## SETUP and RUN with DOCKER
+
+ ```sh
+ docker compose up
+ ```
+ Then navigate to localhost:80
+ 
+ ## WITHOUT DOCKER FOR DEVELOPMENT
+ 
+ ### SETUP
+
+Install dependencies with 
+
+```sh
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## RUN
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+From the root directory
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```sh
+npm run dev
+```
