@@ -56,7 +56,7 @@ function Technologies(props: ITechnologies) {
       />
       <Technology
         title="HTML & CSS"
-        text="Build your site with advanced style and design using Sass, CSS and semantic HTML"
+        text="Build your site with advanced style and design using Sass, CSS and semantic HTML."
         offset={5}
         image="https://upload.wikimedia.org/wikipedia/commons/f/f5/Devicon-css3-plain-wordmark.svg"
         scroll={scroll}
