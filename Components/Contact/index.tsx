@@ -69,6 +69,13 @@ function Contact(props: IContact) {
     scrollIntoView();
   };
 
+  const handleScroll = () => {
+    scrollIntoView();
+    setTimeout(() => {
+      scrollIntoView();
+    }, 100);
+  };
+
   const typewriter = (typewriter: any) => {
     typewriter.typeString("Thank you.").start();
   };
@@ -102,7 +109,7 @@ function Contact(props: IContact) {
           htmlFor="text-input-id"
           label="Name"
         >
-          <TextInput onClick={scrollIntoView} id="text-input-id" name="name" />
+          <TextInput onClick={handleScroll} id="text-input-id" name="name" />
         </FormField>
         <FormField
           error={error}
@@ -111,7 +118,7 @@ function Contact(props: IContact) {
           htmlFor="text-input-id"
           label="Email"
         >
-          <TextInput onClick={scrollIntoView} id="text-input-id" name="email" />
+          <TextInput onClick={handleScroll} id="text-input-id" name="email" />
         </FormField>
         <FormField
           className={styles.message}
@@ -119,11 +126,7 @@ function Contact(props: IContact) {
           htmlFor="text-input-id"
           label="Message"
         >
-          <TextArea
-            onClick={scrollIntoView}
-            id="text-input-id"
-            name="message"
-          />
+          <TextArea onClick={handleScroll} id="text-input-id" name="message" />
         </FormField>
         <Box direction="row" justify="between" gap="medium">
           <Box gap="medium" direction="row">
