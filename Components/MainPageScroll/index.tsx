@@ -81,7 +81,7 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Contact scrollUp={() => scroll(2)} />
+        <Contact scrollUp={() => scroll(2)} scrollIntoView={() => scroll(3)} />
       </ParallaxLayer>
     </Parallax>
   );

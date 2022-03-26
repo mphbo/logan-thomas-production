@@ -13,10 +13,11 @@ interface IEmail {
 
 interface IContact {
   scrollUp: () => void;
+  scrollIntoView: () => void;
 }
 
 function Contact(props: IContact) {
-  const { scrollUp } = props;
+  const { scrollUp, scrollIntoView } = props;
   const [email, setEmail] = useState<IEmail>({
     name: "",
     email: "",
@@ -36,6 +37,7 @@ function Contact(props: IContact) {
     "https://public.herotofu.com/v1/4e784200-abe4-11ec-9c35-5156bf57ed5d";
 
   const handleSendEmail = (email: IEmail) => {
+    scrollIntoView();
     if (email.email.includes("@" && ".")) {
       const requestOptions = {
         method: "POST",
@@ -76,6 +78,7 @@ function Contact(props: IContact) {
           setEmail(value);
           setError("");
           setThankYou(false);
+          scrollIntoView();
         }}
         onReset={() => setEmail({ name: "", email: "", message: "" })}
         onSubmit={({ value }) => handleSendEmail(value)}
