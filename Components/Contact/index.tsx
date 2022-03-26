@@ -64,6 +64,11 @@ function Contact(props: IContact) {
     }, 100);
   };
 
+  const handleReset = () => {
+    setEmail({ name: "", email: "", message: "" });
+    scrollIntoView();
+  };
+
   const typewriter = (typewriter: any) => {
     typewriter.typeString("Thank you.").start();
   };
@@ -85,7 +90,7 @@ function Contact(props: IContact) {
           setThankYou(false);
           scrollIntoView();
         }}
-        onReset={() => setEmail({ name: "", email: "", message: "" })}
+        onReset={handleReset}
         onSubmit={({ value }) => handleSendEmail(value)}
         action={FORM_ENDPOINT}
         method="POST"
