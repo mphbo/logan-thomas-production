@@ -75,7 +75,7 @@ function Contact(props: IContact) {
 
   return (
     <div className={styles.contact}>
-      {!thankYou && <h1>Contact:</h1>}
+      {!thankYou && <h1>Contact Me:</h1>}
       {thankYou && (
         <div className={styles.typewriter}>
           <Typewriter options={{ autoStart: true }} onInit={typewriter} />
