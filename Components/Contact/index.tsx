@@ -52,7 +52,6 @@ function Contact(props: IContact) {
       fetch(FORM_ENDPOINT, requestOptions)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           handleReset();
           scrollIntoView();
           setThankYou(true);
