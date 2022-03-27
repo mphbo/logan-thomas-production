@@ -36,6 +36,11 @@ function Contact(props: IContact) {
   const FORM_ENDPOINT =
     "https://public.herotofu.com/v1/4e784200-abe4-11ec-9c35-5156bf57ed5d";
 
+  const handleReset = () => {
+    setEmail({ name: "", email: "", message: "" });
+    scrollIntoView();
+  };
+
   const handleSendEmail = (email: IEmail) => {
     scrollIntoView();
     if (email.email.includes("@" && ".")) {
@@ -48,10 +53,12 @@ function Contact(props: IContact) {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          handleReset();
           scrollIntoView();
           setThankYou(true);
         })
         .catch((e) => {
+          handleReset();
           setThankYou(true);
           scrollIntoView();
           console.log(e);
@@ -62,11 +69,6 @@ function Contact(props: IContact) {
     setTimeout(() => {
       scrollIntoView();
     }, 100);
-  };
-
-  const handleReset = () => {
-    setEmail({ name: "", email: "", message: "" });
-    scrollIntoView();
   };
 
   const handleScroll = () => {
