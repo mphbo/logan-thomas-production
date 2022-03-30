@@ -50,7 +50,7 @@ As a portfolio site, there is not a lot of functionality, the following features
 
 ### Contact Me page, where a user can send me an email directly using the HeroTofu API.
 
-!["Screenshot of the Contact component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/6.png)
+!["Screenshot of the Contact component"](https://github.com/mphbo/logan-thomas-production/blob/development/public/logan-thomas/7.png)
 
 
 ## SETUP and RUN with DOCKER
