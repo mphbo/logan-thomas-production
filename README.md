@@ -1,4 +1,4 @@
-[Please check out the live site!](https://www.LoganThomas.ca "LoganThomas.ca"){:target="_blank"}
+<a href="http://LoganThomas.ca/" target="_blank">Please check out the live site.</a>
 
 # Description
 
