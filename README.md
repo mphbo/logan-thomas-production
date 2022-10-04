@@ -1,3 +1,5 @@
+[I'm an inline-style link with title](https://www.LoganThomas.ca "Please check out the live website!")
+
 # Description
 
 This mobile first project was a big step for me. Not because the project itself was a breakthrough; it's a portfolio site. It was a breakthrough because I spent multiple weeks prior learning new technologies to implement in the process of building this website:
