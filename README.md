@@ -1,4 +1,4 @@
-[I'm an inline-style link with title](https://www.LoganThomas.ca "Please check out the live website!")
+[Please check out the live site!](https://www.LoganThomas.ca "LoganThomas.ca")
 
 # Description
 
