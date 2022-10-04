@@ -1,4 +1,4 @@
-[Please check out the live site!](https://www.LoganThomas.ca "LoganThomas.ca")
+[Please check out the live site!](https://www.LoganThomas.ca "LoganThomas.ca"){:target="_blank"}
 
 # Description
 
