@@ -1,4 +1,4 @@
-<a href="http://LoganThomas.ca/" target="_blank">Please check out the live site.</a>
+<a href="http://LoganThomas.ca/" target="_blank">Please check out the live site!</a>
 
 # Description
 
