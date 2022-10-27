@@ -7,6 +7,7 @@ import Technologies from "../Technologies";
 import Projects from "../Projects";
 import AboutContact from "../Contact";
 import Contact from "../Contact";
+import GameProjects from "../GameProjects";
 
 function MainPageScroll() {
   const parallax = useRef<IParallax>(null);
@@ -16,7 +17,7 @@ function MainPageScroll() {
     }
   };
   return (
-    <Parallax pages={4} ref={parallax} style={{ top: "0", left: "0" }}>
+    <Parallax pages={5} ref={parallax} style={{ top: "0", left: "0" }}>
       <Heading scroll={scroll} />
       <ParallaxLayer
         offset={1}
@@ -41,6 +42,7 @@ function MainPageScroll() {
           scrollIntoView={() => scroll(1)}
         />
       </ParallaxLayer>
+
       <ParallaxLayer
         offset={2}
         speed={1.5}
@@ -49,6 +51,30 @@ function MainPageScroll() {
 
       <ParallaxLayer
         offset={2}
+        speed={0.25}
+        // onClick={() => scroll(1)}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+        }}
+      >
+        <GameProjects
+          scrollUp={() => scroll(1)}
+          scrollDown={() => scroll(3)}
+          scrollIntoView={() => scroll(2)}
+        />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={3}
+        speed={1.5}
+        style={{ backgroundColor: "#31afa7" }}
+      />
+
+      <ParallaxLayer
+        offset={3}
         speed={0.25}
         // onClick={() => scroll(3)}
         style={{
@@ -59,19 +85,19 @@ function MainPageScroll() {
         }}
       >
         <Technologies
-          scrollUp={() => scroll(1)}
-          scrollDown={() => scroll(3)}
-          scrollIntoView={() => scroll(2)}
+          scrollUp={() => scroll(2)}
+          scrollDown={() => scroll(4)}
+          scrollIntoView={() => scroll(1)}
         />
       </ParallaxLayer>
       <ParallaxLayer
-        offset={3}
+        offset={4}
         speed={1.5}
         style={{ backgroundColor: "#31afa7" }}
       />
 
       <ParallaxLayer
-        offset={3}
+        offset={4}
         speed={0.25}
         // onClick={() => scroll(3)}
         style={{
@@ -81,7 +107,7 @@ function MainPageScroll() {
           color: "white",
         }}
       >
-        <Contact scrollUp={() => scroll(2)} scrollIntoView={() => scroll(3)} />
+        <Contact scrollUp={() => scroll(0)} scrollIntoView={() => scroll(3)} />
       </ParallaxLayer>
     </Parallax>
   );

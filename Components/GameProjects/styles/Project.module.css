@@ -1,0 +1,83 @@
+.project {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project img {
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.project .textContainer {
+  width: 80%;
+  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.project .textContainer h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.project .textContainer p {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+}
+
+.project .textContainer .linkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.project .textContainer .link {
+  font-size: 16px;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.project .textContainer .link:hover {
+  cursor: pointer;
+  color: #31afa7;
+}
+
+.project .arrow {
+  font-size: 60px;
+}
+
+.project .arrow:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Project.module.css.map */

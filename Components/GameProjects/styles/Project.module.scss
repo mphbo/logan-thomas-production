@@ -1,0 +1,83 @@
+.project {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .textContainer {
+    width: 85%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    p {
+      font-size: 5vw;
+      font-weight: 200;
+      line-height: 1.4;
+      margin: 0 0 10px 0;
+    }
+    .linkContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+    }
+    .link {
+      font-size: 16px;
+      margin: 5px;
+      font-weight: 600;
+    }
+    .link:hover {
+      cursor: pointer;
+      color: #31afa7;
+    }
+  }
+  .arrow {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  .arrow:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 500px) {
+  .project {
+    .textContainer {
+      p {
+        font-size: 25px;
+      }
+      .link {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .project {
+    h1 {
+      font-size: 3.5rem;
+    }
+    .textContainer {
+      p {
+        font-size: 35px;
+      }
+      .link {
+        font-size: 30px;
+      }
+    }
+  }
+}
