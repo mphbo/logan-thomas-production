@@ -63,7 +63,7 @@ function Contact(props: IContact) {
           console.log(e);
         });
     } else {
-      setError("Please add an Email in the correct formet.");
+      setError("Please add an Email in the correct format.");
     }
     setTimeout(() => {
       scrollIntoView();
